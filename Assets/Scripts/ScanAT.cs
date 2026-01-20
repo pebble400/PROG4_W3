@@ -1,4 +1,5 @@
 using NodeCanvas.Framework;
+using NodeCanvas.StateMachines;
 using ParadoxNotion.Design;
 using UnityEngine;
 
@@ -34,7 +35,7 @@ namespace NodeCanvas.Tasks.Actions {
 				Collider[] colliders = Physics.OverlapSphere(agent.transform.position, scanRadiusBBP.value, scanLayer);
 				foreach (Collider collider in colliders) 
 				{
-					Blackboard blackboard = collider.GetComponentInParent<Blackboard>();
+					IBlackboard blackboard = collider.GetComponentInParent<FSMOwner>().graph.blackboard;//Blackboard blackboard = collider.GetComponentInParent<Blackboard>();
 					float repairValue = blackboard.GetVariableValue<float>("repairValue");
 
 					if(repairValue == 0)
