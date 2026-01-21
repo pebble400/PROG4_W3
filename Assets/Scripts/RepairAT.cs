@@ -8,7 +8,7 @@ namespace NodeCanvas.Tasks.Actions {
 	public class RepairAT : ActionTask {
 		public BBParameter<Transform> lightTowerTargetBBP;
 		public BBParameter<float> scanRadiusBBP;
-		public BBParameter<float> initialRadisuBBP;
+		public BBParameter<float> initialRadiusBBP;
 
 
 		public float repairRate = 25f;
@@ -23,7 +23,7 @@ namespace NodeCanvas.Tasks.Actions {
 			repairValue = lightTowerBB.GetVariableValue<float>("repairValue");
 
 			lightTowerTargetBBP.value = null;
-			scanRadiusBBP.value = initialRadisuBBP.value;
+			scanRadiusBBP.value = initialRadiusBBP.value;
 		}
 
 		//Called once per frame while the action is active.
